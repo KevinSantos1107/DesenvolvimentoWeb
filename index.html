@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- viewport: Meta tag fundamental para responsividade em dispositivos móveis.  -->
+
+  <title>Kevin Lucas | Portfólio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="imagens/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Vincula o arquivo externo de estilos (style.css) à página HTML.  -->
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <!--HEADER: Barra de navegação fixa no topo da página.
+    Fica visível o tempo todo enquanto o usuário rola a página (position: fixed no CSS).
+    Contém: logotipo, menu de navegação, botão de tema e botão hamburguer (mobile).-->
+  <header class="site-header">
+    <div class="header-inner">
+      <!-- Container interno com max-width para centralizar o conteúdo do header e organizar os elementos com flexbox.  -->
+      <a href="#inicio" class="logo">KL<span class="dot">.</span></a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+        <!-- Botão hamburguer: Visível apenas em telas pequenas (display:none no desktop).
+          - id="menuToggle": identificador único usado pelo JavaScript para adicionar
+            o evento de clique que abre/fecha o menu mobile. -->
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="#inicio"    class="nav-link active">Início</a>
+        <!-- Links de navegação: cada um aponta para uma âncora (seção) da página -->
+        <a href="#sobre"     class="nav-link">Sobre</a>
+        <a href="#formacao"  class="nav-link">Formação</a>
+        <a href="#portfolio" class="nav-link">Portfólio</a>
+        <a href="#contato"   class="nav-link">Contato</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+          <!-- Botão de tema (Dark/Light Mode): id="themeToggle": referenciado pelo JavaScript para detectar o clique
+            Quando clicado, o JS alterna a classe "light-mode" no <body> e salva a preferência no localStorage do navegador.-->
+          <span class="theme-icon">☀</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section id="inicio">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+
+      <div class="hero-inner">
+        <span class="hero-greeting">Olá, eu sou</span>
+        <h1 class="hero-name">
+          Kevin Lucas
+          <span class="line2">Teixeira Santos</span>
+        </h1>
+
+        <p class="hero-subtitle" id="typingText"></p>
+        <!--Parágrafo de subtítulo com efeito de digitação:
+          o JavaScript preenche este elemento com textos que são "digitados" e "apagados" ciclicamente. -->
+
+        <div class="hero-ctas">
+          <a href="#contato"   class="btn btn-primary">Entrar em contato</a>
+          <a href="#portfolio" class="btn btn-outline">Ver projetos</a>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+
+    <!-- ===== SOBRE ===== -->
+    <!-- SEÇÃO SOBRE: Apresentação pessoal com foto, texto biográfico e cards de hobbies.   -->
+    <section id="sobre">
+      <div class="container">
+        <div class="sobre-grid reveal">
+          <!-- Foto -->
+          <div class="foto-wrapper">
+            <div class="foto-frame">
+              <img src="imagens/foto.jpg" alt="Kevin Lucas" />
+              <div class="foto-badge">Disponível</div>
+            </div>
+            <div class="foto-deco"></div>
+            <!--.foto-deco: Elemento decorativo vazio posicionado absolutamente atrás do frame da foto (z-index: -1), criando um efeito de
+              "sombra colorida" no canto inferior direito da foto -->
+          </div>
+
+          <!-- Texto -->
+          <div class="sobre-text">
+            <span class="section-label">Quem sou eu</span>
+            <h2 class="section-title">Sobre <span class="accent">Mim</span></h2>
+            <p>
+              Tenho 20 anos, sou estudante de <strong>Ciência da Computação</strong>, apaixonado por tecnologia
+              e desenvolvimento web. Moro em <strong>Sete Lagoas, MG</strong> e estou sempre
+              buscando evoluir nas minhas habilidades técnicas e pessoais.
+            </p>
+            <p>
+              Estou me aprofundando na criação de sites e tenho uma proficiência no inglês, 
+              o que me permite consumir conteúdos internacionais e me comunicar
+              em ambientes profissionais.
+            </p>
+
+            <p>
+              Além da tecnologia, sou uma pessoa muito ativa: pratico <strong>futebol, vôlei,
+              corrida, ciclismo e musculação</strong>. Também gosto de <strong>ler e jogar
+              videogame</strong> nos momentos de descanso.
+            </p>
+
+            <div class="stats-row">
+              <!-- .stats-row: Linha de informações/estatisticas visuais -->
+              <div class="stat-item">
+                <div class="stat-num">2+</div>
+                <div class="stat-label">Projetos web</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-num">B2</div>
+                <div class="stat-label">Inglês</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-num">2025</div>
+                <div class="stat-label">Início da graduação</div>
+              </div>
+            </div>
+
+            <div class="hobbies-grid">
+              <div class="hobby-card">
+                <span class="hobby-icon">💻</span>
+                <div><h3>Tecnologia</h3><p>Dev web & inovação</p></div>
+              </div>
+              <div class="hobby-card">
+                <span class="hobby-icon">⚽</span>
+                <div><h3>Esportes</h3><p>Futebol, vôlei, bike</p></div>
+              </div>
+              <div class="hobby-card">
+                <span class="hobby-icon">📚</span>
+                <div><h3>Leitura</h3><p>Sempre um livro em mãos</p></div>
+              </div>
+              <div class="hobby-card">
+                <span class="hobby-icon">🎮</span>
+                <div><h3>Games</h3><p>Diversão & descanso</p></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== FORMAÇÃO ===== -->
+    <!--  SEÇÃO FORMAÇÃO: Exibe o histórico educacional (timeline), idiomas (barras de progresso) e cursos complementares (cards). Dividida em duas colunas no desktop. -->
+    <section id="formacao">
+      <div class="container">
+        <span class="section-label reveal">Trajetória</span>
+        <h2 class="section-title reveal">Minha <span class="accent">Formação</span></h2>
+        <div class="formacao-cols">
+          <div class="reveal">
+            <h3 class="section-sub">Educação</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                  <span class="timeline-period">2025 – Em andamento</span>
+                  <h3 class="timeline-title">Ciência da Computação</h3>
+                  <p class="timeline-inst">UNINTER — Centro Universitário Internacional</p>
+                  <p class="timeline-desc">Fundamentos da computação, desenvolvimento de software, estruturas de dados, redes e sistemas operacionais.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="idiomas-section-inner">
+              <h3 class="section-sub">Idiomas</h3>
+              <div class="idiomas-list">
+                <div class="idioma-item">
+                  <div class="idioma-info">
+                    <span class="idioma-nome">Português</span>
+                    <span class="idioma-nivel">Nativo</span>
+                  </div>
+                  <div class="idioma-barra">
+                    <div class="idioma-progresso" data-width="100"></div>
+                    <!--.idioma-progresso: Barra colorida interna que representa o nível. -->
+                  </div>
+                </div>
+
+                <div class="idioma-item">
+                  <div class="idioma-info">
+                    <span class="idioma-nome">Inglês</span>
+                    <span class="idioma-nivel">Intermediário Avançado (B2)</span>
+                  </div>
+                  <div class="idioma-barra">
+                    <div class="idioma-progresso" data-width="70"></div>
+                    <!--  data-width="70": A barra animará até 70% da largura total, representando visualmente o nível B2. -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cursos Complementares -->
+          <div class="reveal">
+            <h3 class="section-sub">Cursos Complementares</h3>
+            <div class="cursos-list">
+
+              <div class="curso-card">
+                <div class="curso-icon">⚖️</div>
+                <div class="curso-body">
+                  <h3>Paralegal – Imigração</h3>
+                  <p class="curso-inst">Curso Profissionalizante</p>
+                  <p class="curso-desc">Legislação de imigração, processos de visto e documentação para processos migratórios.</p>
+                </div>
+                <span class="curso-badge">Concluído</span>
+                <!-- .curso-badge: Indicador de status do curso (Concluído / Em andamento). -->
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== PORTFÓLIO ===== -->
+    <!--SEÇÃO PORTFÓLIO: Grade de projetos desenvolvidos. Cada projeto tem imagem, título, descrição, tags de tecnologias e link.-->
+    <section id="portfolio">
+      <div class="container">
+        <span class="section-label reveal">Trabalhos</span>
+        <h2 class="section-title reveal">Meu <span class="accent">Portfólio</span></h2>
+
+        <div class="projetos-grid">
+          <!-- ===== PROJETO 1: Victor Produções ===== -->
+          <div class="projeto-card reveal">
+            <div class="projeto-img">
+              <img src="imagens/victor-producoes.jpg" alt="Victor Produções" />
+              <!--Screenshot do projeto-->
+              <span class="projeto-status status-dev">Em desenvolvimento</span>
+            </div>
+            <div class="projeto-info">
+              <h3 class="projeto-titulo">Victor Produções</h3>
+              <p class="projeto-desc">Landing page para empresa de produções audiovisuais. Design moderno e totalmente responsivo.</p>
+              <div class="projeto-tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">JavaScript</span>
+              </div>
+              <div class="projeto-links">
+                <a href="https://kevinsantos1107.github.io/Victor-Producoes/"
+                   target="_blank" rel="noopener noreferrer" class="btn-projeto">
+                  🌐 Ver site
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== PROJETO 2: ConnectionUSA ===== -->
+          <div class="projeto-card reveal">
+            <div class="projeto-img">
+              <img src="imagens/connection-usa.jpg" alt="ConnectionUSA" />
+              <span class="projeto-status status-dev">Em desenvolvimento</span>
+            </div>
+            <div class="projeto-info">
+              <h3 class="projeto-titulo">ConnectionUSA</h3>
+              <p class="projeto-desc">Landing page para empresa de serviços de imigração e conexão com os Estados Unidos. Layout profissional e informativo.</p>
+              <div class="projeto-tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">JavaScript</span>
+              </div>
+              <div class="projeto-links">
+                <a href="https://kevinsantos1107.github.io/ConnectionUSA/"
+                   target="_blank" rel="noopener noreferrer" class="btn-projeto">
+                  🌐 Ver site
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===== CONTATO ===== -->
+    <!--SEÇÃO CONTATO: Formulário de contato com validação em JavaScript e informações de contato (email, localização, área de atuação). Dividida em duas colunas: info à esquerda, formulário à direita.-->
+    <section id="contato">
+      <div class="container">
+        <span class="section-label reveal">Fale comigo</span>
+        <h2 class="section-title reveal">Entre em <span class="accent">Contato</span></h2>
+
+        <div class="contato-grid reveal">
+          <!-- COLUNA ESQUERDA: Informações de contato -->
+          <div>
+            <p class="contato-intro">
+              Quer conversar sobre um projeto ou oportunidade? Manda uma mensagem, vai ser um prazer!
+            </p>
+            <div class="contato-info-list">
+              <div class="contato-item">
+                <div class="contato-icon">✉️</div>
+                <div>
+                  <p class="contato-label">Email</p>
+                  <a href="mailto:Kevinlucas.ts@gmail.com" class="contato-valor">Kevinlucas.ts@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="contato-item">
+                <div class="contato-icon">📍</div>
+                <div>
+                  <p class="contato-label">Localização</p>
+                  <p class="contato-valor">Sete Lagoas, MG – Brasil</p>
+                </div>
+              </div>
+
+              <div class="contato-item">
+                <div class="contato-icon">🎓</div>
+                <div>
+                  <p class="contato-label">Área</p>
+                  <p class="contato-valor">Ciência da Computação</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- COLUNA DIREITA: Formulário de contato -->
+          <div class="form-box">
+            <div class="mensagem-sucesso" id="mensagemSucesso" style="display:none;">
+              <span class="sucesso-icon">✅</span>
+              <h3>Mensagem enviada!</h3>
+              <p>Obrigado pelo contato. Retornarei em breve.</p>
+            </div>
+
+            <div id="formularioContato">
+              <!--id="formularioContato": Referenciado pelo JS para ocultar o formulário após o envio (style.display = 'none').-->
+
+              <div class="campo-grupo">
+                <label for="nome" class="campo-label">Nome completo</label>
+                <input type="text" id="nome" class="campo-input" placeholder="Seu nome completo" autocomplete="name" />
+                <span class="campo-erro" id="erroNome"></span>
+                <!--  Span de erro: Inicialmente vazio. O JS insere a mensagem de erro aqui se a validação do campo falhar.-->
+              </div>
+
+              <div class="campo-grupo">
+                <label for="email" class="campo-label">E-mail</label>
+                <input type="email" id="email" class="campo-input" placeholder="seu@email.com" autocomplete="email" />
+                <!--O navegador também faz validação básica de formato. O JS faz uma validação mais robusta via regex.-->
+                <span class="campo-erro" id="erroEmail"></span>
+              </div>
+
+              <div class="campo-grupo">
+                <label for="mensagem" class="campo-label">Mensagem</label>
+                <textarea id="mensagem" class="campo-input campo-textarea" placeholder="Escreva sua mensagem aqui..." rows="5"></textarea>
+                <span class="campo-erro" id="erroMensagem"></span>
+              </div>
+
+              <button type="button" class="btn-submit" onclick="validarFormulario()">Enviar mensagem →</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <!-- FOOTER: Rodapé da página com links de navegação repetidos (conveniência) e informações de copyright.-->
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#formacao">Formação</a>
+      <a href="#portfolio">Portfólio</a>
+      <a href="#contato">Contato</a>
+    </div>
+    <p>© 2025 Kevin Lucas Teixeira Santos · Desenvolvido com HTML5, CSS3 e JavaScript</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <!-- <script>: Vincula o arquivo JavaScript externo à página. -->
+</body>
+</html>
