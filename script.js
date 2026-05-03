@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const atual = localStorage.getItem('tema') || 'dark';
       localStorage.setItem('tema', atual === 'dark' ? 'light' : 'dark');
       /* localStorage.setItem(chave, valor): Salva o novo tema*/
+      aplicarTema();
     });
   }
 
